@@ -12,12 +12,12 @@ public class Main {
     }
 
     private static Game game() {
-        PrintStream out = System.out;
-        Board board = new Board(out, updates());
+        PrintStream printStream = System.out;
+        Board board = new Board(printStream, updates());
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        ValidInputReader reader = new ValidInputReader(bufferedReader);
-        Player player1 = new Player(reader, board, out, "X");
-        Player player2 = new Player(reader, board, out, "O");
+        ValidInputReader reader = new ValidInputReader(bufferedReader, printStream, board);
+        Player player1 = new Player(reader, board, printStream, "X");
+        Player player2 = new Player(reader, board, printStream, "O");
         return new Game(board, player1, player2);
     }
 

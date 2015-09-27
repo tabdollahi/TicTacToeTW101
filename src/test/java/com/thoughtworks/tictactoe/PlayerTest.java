@@ -61,27 +61,4 @@ public class PlayerTest {
 
         verify(board).update(A_STRING, "@");
     }
-
-
-
-
-
-//    @Test
-//    public void shouldPromptUserWhenLocationIsAlreadyTaken() {
-//        when(board.isLocationTaken(anyString())).thenReturn(true);
-//
-//        player.move();
-//
-//        verify(printStream).println(contains("already taken"));
-//    }
-//
-//    @Test
-//    public void shouldNotUpdateBoardWhenLocationIsAlreadyTaken() {
-//        when(board.isLocationTaken(anyString())).thenReturn(true);
-//
-//        player.move();
-//
-//        verify(board, never()).update(anyString(), anyString());
-//    }
-
 }
