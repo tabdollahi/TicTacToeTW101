@@ -7,9 +7,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintStream;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Matchers.anyString;
+import static org.mockito.Matchers.contains;
+import static org.mockito.Mockito.*;
 
 public class PlayerTest {
 
@@ -63,4 +63,24 @@ public class PlayerTest {
 
         verify(board).update(A_STRING, "@");
     }
+
+
+    @Test
+    public void shouldPromptUserWhenLocationIsAlreadyTaken() {
+        when(board.isLocationTaken(anyString())).thenReturn(true);
+
+        player.move();
+
+        verify(printStream).println(contains("already taken"));
+    }
+
+    @Test
+    public void shouldNotUpdateBoardWhenLocationIsAlreadyTaken() {
+        when(board.isLocationTaken(anyString())).thenReturn(true);
+
+        player.move();
+
+        verify(board, never()).update(anyString(), anyString());
+    }
+
 }

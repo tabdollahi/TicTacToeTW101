@@ -34,4 +34,8 @@ public class Board {
     public void update(String location, String symbol) {
         updates.put(location, symbol);
     }
+
+    public boolean isLocationTaken(String location) {
+        return false;
+    }
 }

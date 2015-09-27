@@ -2,3 +2,4 @@
 .gradle/
 *.class
 tictactoe.iml
+.DS_Store

@@ -19,10 +19,15 @@ public class Player {
 
     public void move() {
         printStream.println("Make a move dummy");
-        board.update(readLine(), symbol);
+        String location = getEmptyLocation();
+        if (board.isLocationTaken(location)){
+            printStream.println("already taken");
+        } else {
+            board.update(location, symbol);
+        }
     }
 
-    private String readLine() {
+    private String getEmptyLocation() {
         try {
             return bufferedReader.readLine();
         } catch (IOException e) {
