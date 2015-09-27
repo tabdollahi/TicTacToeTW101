@@ -5,18 +5,20 @@ import java.io.PrintStream;
 public class Game {
 
     private Board board;
-    private PrintStream printStream;
     private Player player;
+    private Player player2;
 
-    public Game(Board board, PrintStream printStream, Player player) {
+    public Game(Board board, Player player, Player player2) {
         this.board = board;
-        this.printStream = printStream;
         this.player = player;
+        this.player2 = player2;
     }
 
     public void start() {
         board.draw();
         player.move();
+        board.draw();
+        player2.move();
         board.draw();
     }
 }

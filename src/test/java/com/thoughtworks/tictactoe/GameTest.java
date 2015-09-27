@@ -15,20 +15,22 @@ public class GameTest {
     private Game game;
     private PrintStream printStream;
     private Player player;
+    private Player player2;
 
     @Before
     public void setUp() throws Exception {
         board = mock(Board.class);
         printStream = mock(PrintStream.class);
         player = mock(Player.class);
-        game = new Game(board, printStream, player);
+        player2 = mock(Player.class);
+        game = new Game(board, player, player2);
     }
 
     @Test
     public void shouldDrawBoardTwiceWhenStarting() {
         game.start();
 
-        verify(board, times(2)).draw();
+        verify(board, times(3)).draw();
     }
 
     @Test
@@ -36,6 +38,13 @@ public class GameTest {
         game.start();
 
         verify(player).move();
+    }
+
+    @Test
+    public void shouldTellPlayer2ToMoveWhenStarting() {
+        game.start();
+
+        verify(player2).move();
     }
 
 }

@@ -25,7 +25,7 @@ public class PlayerTest {
         bufferedReader = mock(BufferedReader.class);
         board = mock(Board.class);
         printStream = mock(PrintStream.class);
-        player = new Player(bufferedReader, board, printStream);
+        player = new Player(bufferedReader, board, printStream, "X");
     }
 
     @Test
@@ -34,7 +34,7 @@ public class PlayerTest {
 
         player.move();
 
-        verify(board).update(A_STRING);
+        verify(board).update(A_STRING, "X");
     }
 
     @Test
@@ -43,7 +43,7 @@ public class PlayerTest {
 
         player.move();
 
-        verify(board).update(A_DIFFERENT_STRING);
+        verify(board).update(A_DIFFERENT_STRING, "X");
     }
 
     @Test
@@ -54,4 +54,13 @@ public class PlayerTest {
     }
 
 
+    @Test
+    public void shouldUpdateBoardWithXWhenMySymbolIsX() throws IOException {
+        when(bufferedReader.readLine()).thenReturn(A_STRING);
+        player = new Player(bufferedReader, board, printStream, "@");
+
+        player.move();
+
+        verify(board).update(A_STRING, "@");
+    }
 }

@@ -15,8 +15,9 @@ public class Main {
         PrintStream out = System.out;
         Board board = new Board(out, updates());
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        Player player = new Player(bufferedReader, board, out);
-        return new Game(board, out, player);
+        Player player = new Player(bufferedReader, board, out, "X");
+        Player player2 = new Player(bufferedReader, board, out, "O");
+        return new Game(board, player, player2);
     }
 
     private static Map<String, String> updates() {

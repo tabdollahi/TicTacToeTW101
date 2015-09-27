@@ -31,7 +31,7 @@ public class Board {
         printStream.print(tictactoeBoard);
     }
 
-    public void update(String location) {
-        updates.put(location, "X");
+    public void update(String location, String symbol) {
+        updates.put(location, symbol);
     }
 }

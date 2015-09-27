@@ -48,16 +48,23 @@ public class BoardTest {
 
     @Test
     public void shouldMarkTopLeftCornerWhenUpdatingLocationOne() {
-        board.update("1");
+        board.update("1", "X");
 
         assertThat(updates.get("1"), is("X"));
     }
 
     @Test
     public void shouldMarkTopCenterWhenUpdatingLocationTwo() {
-        board.update("2");
+        board.update("2", "X");
 
         assertThat(updates.get("2"), is("X"));
+    }
+
+    @Test
+    public void shouldMarkLocationWithDifferentSymbol() {
+        board.update("2", "@");
+
+        assertThat(updates.get("2"), is("@"));
     }
 
 }
