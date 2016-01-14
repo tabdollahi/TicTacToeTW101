@@ -30,7 +30,7 @@ public class GameTest {
     }
 
     @Test
-    public void shouldPromptPlayerOneWhenItIsFirstMove() {
+    public void shouldAskForNumberBetween1And9WhenPromptingPlayer() {
         game.promptPlayerForMovePosition(player1);
 
         verify(printStream).println("Please enter a number between 1-9 to indicate your move.");

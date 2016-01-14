@@ -17,11 +17,9 @@ public class Game {
 
     public void start() {
         board.draw();
-        promptPlayerForMovePosition(player1);
     }
 
     public void promptPlayerForMovePosition(Player player) {
         printStream.println("Please enter a number between 1-9 to indicate your move.");
-        player.returnMovePlacement();
     }
 }
