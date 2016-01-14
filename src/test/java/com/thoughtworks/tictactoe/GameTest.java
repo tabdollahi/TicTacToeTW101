@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.io.PrintStream;
 
+import static org.mockito.Matchers.contains;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
@@ -33,6 +34,6 @@ public class GameTest {
     public void shouldAskForNumberBetween1And9WhenPromptingPlayer() {
         game.promptPlayerForMovePosition(player1);
 
-        verify(printStream).println("Please enter a number between 1-9 to indicate your move.");
+        verify(printStream).println(contains("Please enter a number between 1-9 to indicate your move."));
     }
 }

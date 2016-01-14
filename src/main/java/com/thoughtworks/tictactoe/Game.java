@@ -20,6 +20,11 @@ public class Game {
     }
 
     public void promptPlayerForMovePosition(Player player) {
-        printStream.println("Please enter a number between 1-9 to indicate your move.");
+        String currentPlayer = "Player 1: ";
+
+        if (player.isPlayer1() == false){
+            currentPlayer = "Player 2: ";
+        }
+        printStream.println(currentPlayer+ "Please enter a number between 1-9 to indicate your move.");
     }
 }
