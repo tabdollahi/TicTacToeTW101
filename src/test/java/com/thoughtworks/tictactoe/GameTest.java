@@ -20,7 +20,7 @@ public class GameTest {
         printStream = mock(PrintStream.class);
         board = mock(Board.class);
         player1 = mock(Player.class);
-        game = new Game(board, player1, printStream);
+        game = new Game(board,printStream);
     }
 
     @Test

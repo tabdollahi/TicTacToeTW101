@@ -149,5 +149,16 @@ public class BoardTest {
         inOrder.verify(printStream).println("  |  |X ");
     }
 
+    @Test
+    public void shouldDrawOInUpperLeftCornerIfPlayer2SelectionIs1() {
+        board.redraw("1");
 
+        InOrder inOrder = Mockito.inOrder(printStream);
+
+        inOrder.verify(printStream).println(" O|  |  ");
+        inOrder.verify(printStream).println("--------");
+        inOrder.verify(printStream).println("  |  |  ");
+        inOrder.verify(printStream).println("--------");
+        inOrder.verify(printStream).println("  |  |  ");
+    }
 }

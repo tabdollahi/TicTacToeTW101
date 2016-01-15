@@ -8,8 +8,9 @@ public class Main {
         Board board = new Board(System.out);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         Player player1 = new Player(bufferedReader, true);
-        Game game = new Game(board, player1, System.out);
-        GameRunner gameRunner = new GameRunner(game, player1, board);
+        Player player2 = new Player(bufferedReader, false);
+        Game game = new Game(board, System.out);
+        GameRunner gameRunner = new GameRunner(game, player1, board, player2);
 
         game.start();
         gameRunner.playRound();

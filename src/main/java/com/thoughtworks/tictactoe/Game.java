@@ -5,13 +5,11 @@ import java.io.PrintStream;
 public class Game {
 
     private final PrintStream printStream;
-    private Player player1;
     private Board board;
 
 
-    public Game(Board board, Player player1, PrintStream printStream) {
+    public Game(Board board, PrintStream printStream) {
         this.board = board;
-        this.player1 = player1;
         this.printStream = printStream;
     }
 
